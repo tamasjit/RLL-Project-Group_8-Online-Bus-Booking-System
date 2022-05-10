@@ -12,7 +12,8 @@ import { Passenger } from '../passenger';
   providedIn: 'root'
 })
 export class BusService {
-  ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
+  //ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
+  ROOT_URL:String="http://localhost:5000";
 
   constructor(private httpClient:HttpClient) { }
 
