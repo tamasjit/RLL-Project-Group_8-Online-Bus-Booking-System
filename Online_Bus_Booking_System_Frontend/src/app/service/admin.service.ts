@@ -11,44 +11,45 @@ import { Ticket } from '../model/Ticket';
   providedIn: 'root'
 })
 export class AdminService {
+  ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
 
   constructor(private httpClient: HttpClient) { }
 
 
 
   loginAdmin(loginDto: LoginDto): Observable<boolean> {
-    return this.httpClient.post<boolean>("http://localhost:9090/loginadmin", loginDto);
+    return this.httpClient.post<boolean>(this.ROOT_URL+"/loginadmin", loginDto);
 
   }
 
   viewAllBuses(): Observable<Bus[]> {
-    return this.httpClient.get<Bus[]>("http://localhost:9090/viewallbuses");
+    return this.httpClient.get<Bus[]>(this.ROOT_URL+"/viewallbuses");
   }
 
   addorUpdateBus(bus: Bus): Observable<Bus> {
-    return this.httpClient.post<Bus>("http://localhost:9090/addorupdatebus", bus);
+    return this.httpClient.post<Bus>(this.ROOT_URL+"/addorupdatebus", bus);
   }
 
   viewRegisterCustomer(): Observable<User[]> {
-    return this.httpClient.get<User[]>("http://localhost:9090/viewallregsiteredcustomers");
+    return this.httpClient.get<User[]>(this.ROOT_URL+"/viewallregsiteredcustomers");
   }
 
 
   viewRegisterCustomerWithNoBooking(): Observable<User[]> {
-    return this.httpClient.get<User[]>("http://localhost:9090/viewcustomerwhoregisteredbutwithnobooking");
+    return this.httpClient.get<User[]>(this.ROOT_URL+"/viewcustomerwhoregisteredbutwithnobooking");
 
   }
 
   mostPerfferedBus(): Observable<number[]> {
-    return this.httpClient.get<number[]>("http://localhost:9090/mostpreferredbus");
+    return this.httpClient.get<number[]>(this.ROOT_URL+"/mostpreferredbus");
   }
 
   updateBus(busId:number,source:string,destination:string,fare:number):Observable<number>{
-    return this.httpClient.get<number>("http://localhost:9090/updatebus?busId="+busId+"&source="+source+"&destination="+destination+"&fare="+fare);
+    return this.httpClient.get<number>(this.ROOT_URL+"/updatebus?busId="+busId+"&source="+source+"&destination="+destination+"&fare="+fare);
   }
 
   getTicketBasedOnBusAndDate(busId:number,travelDate:Date):Observable<Ticket[]>{
-    return this.httpClient.get<Ticket[]>("http://localhost:9090/bookingsbasedonperiod?busId="+busId+"&travelDate="+travelDate);
+    return this.httpClient.get<Ticket[]>(this.ROOT_URL+"/bookingsbasedonperiod?busId="+busId+"&travelDate="+travelDate);
   }
 
 }

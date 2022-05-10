@@ -12,26 +12,27 @@ import { Passenger } from '../passenger';
   providedIn: 'root'
 })
 export class BusService {
+  ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
 
   constructor(private httpClient:HttpClient) { }
 
   searchBusList(source:string,destination:string):Observable<Bus[]>{
-    return this.httpClient.get<Bus[]>("http://localhost:9090/searchbus?source="+source+"&destination="+destination);
+    return this.httpClient.get<Bus[]>(this.ROOT_URL+"/searchbus?source="+source+"&destination="+destination);
   }
 
   fetchBookedSeats(dateOfJourney:Date,busId:number):Observable<string[]>{
-    return this.httpClient.get<string[]>("http://localhost:9090/fetchbookedseats?travelDate="+dateOfJourney+"&busId="+busId);
+    return this.httpClient.get<string[]>(this.ROOT_URL+"/fetchbookedseats?travelDate="+dateOfJourney+"&busId="+busId);
   }
 
   getBusById(busId:number):Observable<Bus>{
-    return this.httpClient.get<Bus>("http://localhost:9090/getbusbyid?busId="+busId);
+    return this.httpClient.get<Bus>(this.ROOT_URL+"/getbusbyid?busId="+busId);
   }
 
   bookATicket(bookATicket:BookaTicketDto,userId:number,busId:number):Observable<Ticket>{
-    return this.httpClient.post<Ticket>("http://localhost:9090/bookaticket?userId="+userId+"&busId="+busId,bookATicket);
+    return this.httpClient.post<Ticket>(this.ROOT_URL+"/bookaticket?userId="+userId+"&busId="+busId,bookATicket);
   }
 
   getBusByticketId(ticketId:number):Observable<Bus>{
-    return this.httpClient.get<Bus>("http://localhost:9090/getBusByTicketId?ticketId="+ticketId);
+    return this.httpClient.get<Bus>(this.ROOT_URL+"/getBusByTicketId?ticketId="+ticketId);
 }
 }

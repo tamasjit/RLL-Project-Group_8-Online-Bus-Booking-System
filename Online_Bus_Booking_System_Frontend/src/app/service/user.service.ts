@@ -24,70 +24,71 @@ export class UserService {
 
   //   // }
   // }
+  ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
   
   registerUser(user:User) : Observable<User> {
-    let url = 'http://localhost:9090/registerorupdateuser';
+    let url = this.ROOT_URL+'/registerorupdateuser';
     return this.httpClient.post<User>(url, user);
   }
 
   loginUser(loginDto:LoginDto):Observable<boolean>{
-    return this.httpClient.post<boolean>("http://localhost:9090/login",loginDto);
+    return this.httpClient.post<boolean>(this.ROOT_URL+"/login",loginDto);
   }
 
   ticketDetails(ticketId:number):Observable<Ticket>{
-    return this.httpClient.get<Ticket>("http://localhost:9090/ticketDetails?ticketId="+ticketId);
+    return this.httpClient.get<Ticket>(this.ROOT_URL+"/ticketDetails?ticketId="+ticketId);
   }
 
   passengerList(ticketId:number):Observable<Passenger[]>{
-    return this.httpClient.get<Passenger[]>("http://localhost:9090/getPassengerList?ticketId="+ticketId);
+    return this.httpClient.get<Passenger[]>(this.ROOT_URL+"/getPassengerList?ticketId="+ticketId);
   }
 
   
   getUserByUserId(userId:number):Observable<User>{
-    return this.httpClient.get<User>("http://localhost:9090/finduserbyid?userId="+userId);
+    return this.httpClient.get<User>(this.ROOT_URL+"/finduserbyid?userId="+userId);
   }
 
   getTicketsBookedByUserId(userId:number):Observable<Ticket[]>{
-    return this.httpClient.get<Ticket[]>("http://localhost:9090/viewticketbookedbyuserid?userId="+userId);
+    return this.httpClient.get<Ticket[]>(this.ROOT_URL+"/viewticketbookedbyuserid?userId="+userId);
   }
 
   rechargeWallet(userId:number,rechargeAmount:number):Observable<User>{
-    return this.httpClient.get<User>("http://localhost:9090/rechargeWallet?userId="+userId+"&rechargeAmount="+rechargeAmount);
+    return this.httpClient.get<User>(this.ROOT_URL+"/rechargeWallet?userId="+userId+"&rechargeAmount="+rechargeAmount);
   }
 
   changePassword(changePasswordDto:ChangePasswordDto):Observable<boolean>{
-    return this.httpClient.put<boolean>("http://localhost:9090/changepassword",changePasswordDto);
+    return this.httpClient.put<boolean>(this.ROOT_URL+"/changepassword",changePasswordDto);
   }
 
   cancelTicket(ticketId:number):Observable<boolean>{
-    return this.httpClient.delete<boolean>("http://localhost:9090/cancelticket?ticketId="+ticketId);
+    return this.httpClient.delete<boolean>(this.ROOT_URL+"/cancelticket?ticketId="+ticketId);
   }
   
   payByWallet(userId:number,fare:number):Observable<boolean>{
-    return this.httpClient.get<boolean>("http://localhost:9090/paythroughwallet?userId="+userId+"&amount="+fare);
+    return this.httpClient.get<boolean>(this.ROOT_URL+"/paythroughwallet?userId="+userId+"&amount="+fare);
   }
 
   sendEmail(ticketId:number):Observable<boolean>{
-    return this.httpClient.get<boolean>("http://localhost:9090/sendEmail?ticketId="+ticketId);
+    return this.httpClient.get<boolean>(this.ROOT_URL+"/sendEmail?ticketId="+ticketId);
   }
 
   reset(loginforgetdto:LoginForgetDto):Observable<User>{
-    return this.httpClient.post<User>("http://localhost:9090/loginforgetpassword",loginforgetdto);
+    return this.httpClient.post<User>(this.ROOT_URL+"/loginforgetpassword",loginforgetdto);
   }
 
 
   reschedule(ticketId:number,travelDate:Date,seats:String[]):Observable<Ticket>{
-    return this.httpClient.put<Ticket>("http://localhost:9090/reschedule?ticketId="+ticketId+"&travelDate="+travelDate,seats);
+    return this.httpClient.put<Ticket>(this.ROOT_URL+"/reschedule?ticketId="+ticketId+"&travelDate="+travelDate,seats);
   }
 
 
   addTicketToUser(ticketId:number,userId:number):Observable<Ticket>{
-    return this.httpClient.get<Ticket>("http://localhost:9090/addtickettouser?ticketId="+ticketId+"&userId="+userId);
+    return this.httpClient.get<Ticket>(this.ROOT_URL+"/addtickettouser?ticketId="+ticketId+"&userId="+userId);
   }
 
 
   sendMailOnRegistration(userId:number):Observable<boolean>{
-    return this.httpClient.get<boolean>("http://localhost:9090/sendmailonregistration?userId="+userId);
+    return this.httpClient.get<boolean>(this.ROOT_URL+"/sendmailonregistration?userId="+userId);
   }
 
 }

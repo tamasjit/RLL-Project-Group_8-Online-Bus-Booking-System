@@ -81,7 +81,7 @@ button {
   }
  
  label{
-    font-family: 'Pacifico', cursive;, "serif";
+    font-family: 'Pacifico', cursive, "serif";
     font-weight: bold;
   }
 
@@ -90,7 +90,7 @@ button {
     color: darkred;
 
 
-    font-family: 'Pacifico', cursive;, "serif";
+    font-family: 'Pacifico', cursive, "serif";
   }
   
   .dt{
