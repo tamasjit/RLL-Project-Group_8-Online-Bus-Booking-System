@@ -1,0 +1,384 @@
+<div id="main_1" class="card" style="margin-top: 35px; border-radius: 30px;">
+  <div class="outer" style="padding-top: 22px ; padding-bottom: 35px;">
+    <p style="text-align: center; font-family: 'Pacifico', cursive;; font-size: 20px;"><b>BOOK YOUR BUS TODAY</b>
+    </p>
+
+    <form #searchBusForm="ngForm" (ngSubmit)="checkBus(searchBusForm)">
+      <div id="errorForDirectClick" style="text-align: center; color: darkred;"></div>
+      <div class="row">
+        <div class="col_s">
+          <span *ngIf="(src.dirty||src.touched)" style='color:darkred;'>
+            <span style="margin-left: 10%;" *ngIf="src.errors?.required">Source is required</span></span><br>
+          <input list="list-buses" type="text" value="source" id="source" name="source" [(ngModel)]="source"
+            #src=ngModel placeholder="ENTER SOURCE CITY" required style="margin-left: 10%;">
+
+
+          <datalist id="list-buses">
+            <option value="Pune">
+            <option value="Mumbai">
+            <option value="Chennai">
+            <option value="Aurangabad">
+            <option value="Nashik">
+            <option value="Nagpur">
+
+          </datalist>
+        </div>
+
+
+
+
+        <div class="col_s">
+          <span *ngIf="(des.dirty||des.touched)" style='color:darkred;'>
+            <span style="margin-left: 9%;" *ngIf="des.errors?.required">Destination is required</span></span><br>
+
+          <input list="list-buses" type="text" value="destination" id="destination" name="destination"
+            [(ngModel)]="destination" #des=ngModel placeholder="ENTER DESTINATION CITY" required
+            style="margin-left: 5%;">
+
+          <datalist id="list-buses">
+            <option value="Pune">
+            <option value="Mumbai">
+            <option value="Chennai">
+            <option value="Aurangabad">
+            <option value="Nagpur">
+
+          </datalist>
+        </div>
+
+        <div class="col_s">
+          <span *ngIf="(dt.dirty||dt.touched)" style='color:darkred;'>
+            <span style="margin-left: 9%;" *ngIf="dt.errors?.required">Travel date is required</span></span><br>
+
+          <mat-form-field class="dt">
+            <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="   CHOOSE A DATE" name="dateOfJourney"
+              required #dt="ngModel" [(ngModel)]=dateOfJourney>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <button type="submit" style="margin-left: 38%;"> SEARCH BUSES</button>
+    </form>
+  </div>
+</div>
+<div style="background-color: white; margin-top: 60px; width: 100%;">
+  <div style="border-radius: 35px;">
+    <br>
+    <h2 style="text-align: center; font-size: 25px; font-family: 'Pacifico', cursive;">POPULAR DESTINATIONS
+    </h2>
+    <div id="main_1" class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="../assets/jai.jpeg" id="img1" alt="JAIPUR" style="height: 450px;">
+        <div class="text">JAIPUR
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+
+        <img src="../assets/udaipur.jpg" id="img1" alt="JAIPUR" style="height: 450px;">
+        <div class="text">UDAIPUR
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="../assets/hyd.jpg" id="img1" alt="JAIPUR" style="height: 450px;">
+        <div class="text">HYDERABAD
+        </div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../assets/goa.jpg" id="img1" alt="JAIPUR" style="height: 450px;">
+        <div class="text">GOA
+        </div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../assets/mumbai.jpg" id="img1" alt="JAIPUR" style="height: 450px;">
+        <div class="text">MUMBAI
+        </div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../assets/mangalore.jpg" id="img1" style="height: 450px;">
+        <div class="text">MANGALORE
+        </div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../assets/tirupati.jpg" id="img1" style="height: 450px;">
+        <div class="text">TIRUPATI
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div>
+
+  <h1
+    style="text-align:center; font-size: 30px;color: black;margin-top: 5%; font-family: 'Pacifico', cursive;">
+    Bus Operator Measures </h1>
+
+  <div style="background-color:rgb(237, 237, 245)">
+
+    <div id="main_1">
+
+      <br>
+      <br>
+      <div class="row">
+        <div class="columns">
+          <h2 style="color: black; font-family: 'Pacifico', cursive;">Regular Temperature Checks</h2>
+          <input type="image" src="../assets/sanitizer.jpg"
+            style="height: 210px; width: 260px; font-family: 'Pacifico', cursive;" /><br><br>
+          <p>Our bus drivers and service personnel are subject to temperature checks before every trip.</p><br><br>
+        </div>
+        <div class="columns">
+          <h2 style="color: black; font-family: 'Pacifico', cursive;">Sanitized Bus</h2>
+          <input type="image" src="../assets/sanitized_bus.jpg"
+            style="height: 210px; width: 260px; font-family: 'Pacifico', cursive;" /><br><br>
+          <p>All our buses are deep cleaned and disinfected before and after every trip.</p><br><br>
+        </div>
+        <div class="columns">
+          <h2 style="color: black; font-family: 'Pacifico', cursive;">Hand Sanitizers Provided</h2>
+          <input type="image" src="../assets/temp_check.jpg"
+            style="height: 210px; width: 260px; font-family: 'Pacifico', cursive;" /><br><br>
+          <p>We are equipping all our buses with hand sanitizers to help you stay disinfected.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <h1 style="text-align: center; font-size: 30px; margin-top:3%; font-family: 'Pacifico', cursive;">Passenger
+    Guidelines</h1> <br>
+
+
+  <div style=" background-color:rgb(245, 237, 245);">
+    <div id="main_1">
+      <div class="row">
+        <div class="columns">
+          <h2 style="margin-top: 5%; font-family: 'Pacifico', cursive;">Mandatory masks</h2><br>
+          <input type="image" src="../assets/mask.jpg"
+            style="height: 210px; width: 260px; font-family: 'Pacifico', cursive;" /><br><br>
+          <p>
+            Proper masks are mandatory for all passengers. Handkerchiefs /other cloth items are not permitted as masks..
+          </p>
+          <br>
+        </div>
+        <div class="columns">
+
+          <h2 style="margin-top: 5%; font-family: 'Pacifico', cursive;">Do not travel with Symptoms</h2><br>
+          <input type="image" src="../assets/fever.jpg"
+            style="height: 210px; width: 260px; font-family: 'Pacifico', cursive;" /><br><br>
+          <p>
+            Passengers are advised to refrain from travel if they show Covid-19 Symptoms. In such an event, the
+            passenger risks de-boarding.</p>
+          <br>
+        </div>
+        <div class="columns">
+          <h2 style="margin-top: 5%; font-family: 'Pacifico', cursive;">Follow Mandatory Travel Guidelines</h2>
+          <br>
+          <input type="image" src="../assets/travel.jpg"
+            style="height: 210px; width: 260px; font-family: 'Pacifico', cursive;" /><br><br>
+          <p>
+            It is mandatory to follow the travel guidelines of your source and destination state for travel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div id="main_1" style="margin-top: 2%; margin-left: 17%; margin-right: 2%; color: #ffd166;">
+
+      <h1 style="color: black; margin-left:35%; font-size:30px; font-family: 'Pacifico', cursive;">Our Services
+      </h1>
+      <br>
+      <div>
+
+        <section class="feature-section img-fluid">
+
+          <div class="container">
+            <div class="row">
+
+            </div>
+            <div class="row">
+              <div class="col_s">
+                <div class="features-div">
+                  <i style="font-size:10em;" class="fa fa-laptop" aria-hidden="true"></i>
+                  <br>
+                  <br>
+                  <h2 class="features-heading" style="font-size: 25px;">User Friendly Interface</h2>
+                  <br>
+                </div>
+              </div>
+              <div class="col_s">
+                <div class="features-div">
+                  <i style="font-size:10em;" class="fa fa-bullseye"></i>
+                  <br>
+                  <br>
+                  <h2 class="features-heading" style="font-size: 25px;">Flexible Booking Engine</h2>
+                  <br>
+                </div>
+              </div>
+              <div class="col_s">
+                <div class="features-div">
+                  <i style="font-size:10em;" class="fa fa-user-circle"></i>
+                  <br>
+                  <br>
+                  <h2 class="features-heading" style="font-size: 25px;">Customized Booking Engine</h2>
+                  <br>
+                </div>
+              </div>
+              <div class="col_s">
+                <div class="features-div">
+                  <i style="font-size:10em;" class="fa fa-inr"></i>
+                  <br>
+                  <br>
+                  <h2 class="features-heading" style="font-size: 25px;">Reasonable Price</h2>
+                  <br>
+                </div>
+              </div>
+              <div class="col_s">
+                <div class="features-div">
+                  <i style="font-size:10em;" class="fa fa-undo"></i>
+                  <br>
+                  <br>
+                  <h2 class="features-heading" style="font-size: 25px;">Guaranted Work</h2>
+                  <br>
+                </div>
+              </div>
+              <div class="col_s">
+                <div class="features-div">
+                  <i style="font-size:10em;" class="fa fa-envelope"></i>
+                  <br>
+                  <br>
+                  <h2 class="features-heading" style="font-size: 25px;">24/7 Support</h2>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="about-section"
+    style=" background-color:#06d6a0; margin-top: 5%;margin-bottom: 70px;padding-left: 75px;padding-right: 75px;">
+    <div class="section-title">
+
+      <h2 style="font-size: 30px; font-family: 'Pacifico', cursive;;">ABOUT US</h2>
+      <p style="font-family: 'Pacifico', cursive;;font-size: 27px;"> OBS Travels - India's fastest
+        online bus Booking System</p>
+       <h3 style="font-size: 30px; font-family: 'Pacifico', cursive;;">Overwhelming features of OBS Travels</h3>
+        <ul>
+            <li style="font-size: 23px; font-family: 'Pacifico', cursive;;"> Safe and Secure Booking System</li><br>
+            <li style="font-size: 23px; font-family: 'Pacifico', cursive;;">Advance Seat Management</li><br>
+            <li style="font-size: 23px; font-family: 'Pacifico', cursive;;">Stay informed with us about your booking Status through Email</li><br>
+        </ul>
+      <br>
+
+    </div>
+    <br>
+
+    <h2 style="text-align:center;font-size: 30px; font-family: 'Pacifico', cursive;;"> Development Team</h2>
+    <div class="row">
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;">Tamasjit</h2>
+              <p class="title">Developer</p>
+
+              <p>tamasjit@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;;">Koreboina Esther Rani</h2>
+              <p class="title">Developer</p>
+
+              <p>esther@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;">C Pinku</h2>
+              <p class="title">Developer</p>
+              <p>cpinku@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;">Manimaran</h2>
+              <p class="title">Developer</p>
+              <p>Manimaran@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;">Lokesh</h2>
+              <p class="title">Developer</p>
+              <p>lokesh@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;">Abhianad</h2>
+              <p class="title">Developer</p>
+              <p>Abhianad@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="team-1">
+          <div class="card">
+            <div class="container">
+              <h2 style="color: black;font-family: 'Pacifico', cursive;">GV Siva Kumar</h2>
+              <p class="title">Developer</p>
+              <p>sivakumar@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+  
+      
+    </div>
+  </section>
+  <div style="height: 150px;">
+
+  </div>
+</div>

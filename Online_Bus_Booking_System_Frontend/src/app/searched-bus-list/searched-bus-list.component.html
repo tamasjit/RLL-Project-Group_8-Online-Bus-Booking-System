@@ -1,0 +1,53 @@
+<div id="main_1">
+    <div class="card">
+
+        <h3 style="text-align: center; font-family: 'Pacifico', cursive;; font-size: 22px;">{{source}} - {{destination}} on {{dateOfJourney}}</h3>
+
+    </div>
+
+    <div class="card">
+        <div>
+            <div><label style="margin-right: 6%;margin-left: 14%;font-family: 'Pacifico', cursive;"> Departure</label>
+                <label style="margin-right: 9%; font-family: 'Pacifico', cursive;"> Duration</label>
+                <label style="margin-right: 9%; font-family: 'Pacifico', cursive;"> Arrival</label>
+                <label style="margin-right: 7%;font-family: 'Pacifico', cursive;"> Fare</label>
+                <label style="font-family: 'Pacifico', cursive;"> Bus Type </label>
+            </div>
+        </div>
+    </div>
+    <div class="card2">
+        <div *ngIf="busList.length == 0 then noBus else busListBlock">
+        </div>
+
+        <ng-template #noBus>
+            <tr>
+                <td>No</td>
+                <td>Bus</td>
+                <td>Available</td>
+                <td>in this</td>
+                <td>route</td>
+            </tr>
+        </ng-template>
+
+
+        <ng-template #busListBlock>
+            <table class="table">
+                <tr *ngFor="let b of busList">
+                    <td>
+                        <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+                            {{b.busId}} </h3>
+                        <p>{{b.busType}}</p>
+                    </td>
+                    <td>{{b.timeOfDeparture}}</td>
+                    <td style="color: grey;">{{b.duration}}</td>
+                    <td>{{b.timeOfArrival}}</td>
+                    <td>₹ {{b.fare}}</td>
+                    <td>{{b.typeOfBus}}</td>
+                    <td><button type="button" style="  background-color:rgb(11, 89, 92); color: white;" (click)="busSelect(b.busId)">View Seats</button></td>
+                </tr>
+            </table>
+        </ng-template>
+
+    </div>
+    <div style="margin-top:200px ;"></div>
+</div>
