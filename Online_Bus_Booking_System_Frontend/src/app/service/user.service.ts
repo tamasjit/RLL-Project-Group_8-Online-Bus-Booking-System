@@ -25,6 +25,7 @@ export class UserService {
   //   // }
   // }
   ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
+  //ROOT_URL:String="http://localhost:5000";
   
   registerUser(user:User) : Observable<User> {
     let url = this.ROOT_URL+'/registerorupdateuser';

@@ -123,12 +123,12 @@
                     <th>Number Of Passengers</th>
                 </tr>
                 <tr *ngFor="let fetchedTicket of fetchedTickets">
-                    <td>{{fetchedTicket.ticketId}}</td>
-                    <td>{{fetchedTicket.travelDate}}</td>
-                    <td>{{fetchedTicket.email}}</td>
-                    <td>{{fetchedTicket.totalAmount}}</td>
-                    <td>{{fetchedTicket.status}}</td>
-                    <td>{{fetchedTicket.noOfPassengers}}</td>
+                    <td>{{fetchedTicket?.ticketId}}</td>
+                    <td>{{fetchedTicket?.travelDate}}</td>
+                    <td>{{fetchedTicket?.email}}</td>
+                    <td>{{fetchedTicket?.totalAmount}}</td>
+                    <td>{{fetchedTicket?.status}}</td>
+                    <td>{{fetchedTicket?.noOfPassengers}}</td>
                 </tr>
             </table>
         </div>
@@ -151,15 +151,15 @@
                 <th>Destination</th>
             </tr>
             <tr *ngFor="let busdetails of busList">
-                <td>{{busdetails.busId}}</td>
-                <td>{{busdetails.busName}}</td>
-                <td>{{busdetails.duration}}</td>
-                <td>{{busdetails.typeOfBus}}</td>
-                <td>{{busdetails.timeOfDeparture}}</td>
-                <td>{{busdetails.timeOfArrival}}</td>
-                <td>{{busdetails.fare}}</td>
-                <td>{{busdetails.source}}</td>
-                <td>{{busdetails.destination}}</td>
+                <td>{{busdetails?.busId}}</td>
+                <td>{{busdetails?.busName}}</td>
+                <td>{{busdetails?.duration}}</td>
+                <td>{{busdetails?.typeOfBus}}</td>
+                <td>{{busdetails?.timeOfDeparture}}</td>
+                <td>{{busdetails?.timeOfArrival}}</td>
+                <td>{{busdetails?.fare}}</td>
+                <td>{{busdetails?.source}}</td>
+                <td>{{busdetails?.destination}}</td>
             </tr>
         </table>
     </div>
@@ -223,15 +223,15 @@
                     <th>Destination</th>
                 </tr>
                 <tr *ngFor="let busdetails of updateddBus">
-                    <td>{{busdetails.busId}}</td>
-                    <td>{{busdetails.busName}}</td>
-                    <td>{{busdetails.duration}}</td>
-                    <td>{{busdetails.typeOfBus}}</td>
-                    <td>{{busdetails.timeOfArrival}}</td>
-                    <td>{{busdetails.timeOfDeparture}}</td>
-                    <td>{{busdetails.fare}}</td>
-                    <td>{{busdetails.source}}</td>
-                    <td>{{busdetails.destination}}</td>
+                    <td>{{busdetails?.busId}}</td>
+                    <td>{{busdetails?.busName}}</td>
+                    <td>{{busdetails?.duration}}</td>
+                    <td>{{busdetails?.typeOfBus}}</td>
+                    <td>{{busdetails?.timeOfArrival}}</td>
+                    <td>{{busdetails?.timeOfDeparture}}</td>
+                    <td>{{busdetails?.fare}}</td>
+                    <td>{{busdetails?.source}}</td>
+                    <td>{{busdetails?.destination}}</td>
                 </tr>
             </table>
         </div>
@@ -255,15 +255,15 @@
                 <th>Destination</th>
             </tr>
             <tr *ngFor="let busdetails of mostPreferredBusses">
-                <td>{{busdetails.busId}}</td>
-                <td>{{busdetails.busName}}</td>
-                <td>{{busdetails.duration}}</td>
-                <td>{{busdetails.typeOfBus}}</td>
-                <td>{{busdetails.timeOfArrival}}</td>
-                <td>{{busdetails.timeOfDeparture}}</td>
-                <td>{{busdetails.fare}}</td>
-                <td>{{busdetails.source}}</td>
-                <td>{{busdetails.destination}}</td>
+                <td>{{busdetails?.busId}}</td>
+                <td>{{busdetails?.busName}}</td>
+                <td>{{busdetails?.duration}}</td>
+                <td>{{busdetails?.typeOfBus}}</td>
+                <td>{{busdetails?.timeOfArrival}}</td>
+                <td>{{busdetails?.timeOfDeparture}}</td>
+                <td>{{busdetails?.fare}}</td>
+                <td>{{busdetails?.source}}</td>
+                <td>{{busdetails?.destination}}</td>
             </tr>
         </table>
     </div>
@@ -291,14 +291,14 @@
                     <th>Address</th>
                 </tr>
                 <tr *ngFor="let userdetails of userList">
-                    <td>{{userdetails.userId}}</td>
-                    <td>{{userdetails.firstName}}</td>
-                    <td>{{userdetails.lastName}}</td>
-                    <td>{{userdetails.email}}</td>
-                    <td>{{userdetails.contactNo}}</td>
-                    <td>{{userdetails.dateOfBirth}}</td>
-                    <td>{{userdetails.gender}}</td>
-                    <td>{{userdetails.address}}</td>
+                    <td>{{userdetails?.userId}}</td>
+                    <td>{{userdetails?.firstName}}</td>
+                    <td>{{userdetails?.lastName}}</td>
+                    <td>{{userdetails?.email}}</td>
+                    <td>{{userdetails?.contactNo}}</td>
+                    <td>{{userdetails?.dateOfBirth}}</td>
+                    <td>{{userdetails?.gender}}</td>
+                    <td>{{userdetails?.address}}</td>
                 </tr>
             </table>
         </div>
@@ -316,14 +316,14 @@
                     <th>Address</th>
                 </tr>
                 <tr *ngFor="let userdetails of userLists">
-                    <td>{{userdetails.userId}}</td>
-                    <td>{{userdetails.firstName}}</td>
-                    <td>{{userdetails.lastName}}</td>
-                    <td>{{userdetails.email}}</td>
-                    <td>{{userdetails.contactNo}}</td>
-                    <td>{{userdetails.dateOfBirth}}</td>
-                    <td>{{userdetails.gender}}</td>
-                    <td>{{userdetails.address}}</td>
+                    <td>{{userdetails?.userId}}</td>
+                    <td>{{userdetails?.firstName}}</td>
+                    <td>{{userdetails?.lastName}}</td>
+                    <td>{{userdetails?.email}}</td>
+                    <td>{{userdetails?.contactNo}}</td>
+                    <td>{{userdetails?.dateOfBirth}}</td>
+                    <td>{{userdetails?.gender}}</td>
+                    <td>{{userdetails?.address}}</td>
                 </tr>
             </table>
         </div>

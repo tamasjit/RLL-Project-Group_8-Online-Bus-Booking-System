@@ -12,9 +12,9 @@
         <br>
         <table class="topBar">
             <tr>
-                <th>{{bus.source}} - {{bus.destination}}</th>
-                <th>Date Of Journey : {{ticket.travelDate}}</th>
-                <th>Ticket Id : {{ticket.ticketId}}</th>
+                <th>{{bus?.source}} - {{bus?.destination}}</th>
+                <th>Date Of Journey : {{ticket?.travelDate}}</th>
+                <th>Ticket Id : {{ticket?.ticketId}}</th>
             </tr>
         </table>
 
@@ -31,10 +31,10 @@
 
                 <div class="listPassenger">
                     <tr *ngFor="let p of passengerList">
-                        <td>{{p.passengerName}}</td>
-                        <td> {{p.seatNo}} </td>
-                        <td> {{p.passengerAge}} </td>
-                        <td>{{p.passengerId}}</td>
+                        <td>{{p?.passengerName}}</td>
+                        <td> {{p?.seatNo}} </td>
+                        <td> {{p?.passengerAge}} </td>
+                        <td>{{p?.passengerId}}</td>
                     </tr>
                 </div>
             </table>
@@ -42,9 +42,9 @@
         <div class="busInfoBar">
             <table>
                 <tr>
-                    <th>Bus Id : {{bus.busId}}</th>
-                    <th>Bus Type : {{bus.typeOfBus}}</th>
-                    <th>Bus Name : {{bus.busName}}</th>
+                    <th>Bus Id : {{bus?.busId}}</th>
+                    <th>Bus Type : {{bus?.typeOfBus}}</th>
+                    <th>Bus Name : {{bus?.busName}}</th>
                 </tr>
             </table>
         </div>
@@ -52,9 +52,9 @@
         <div class="jouneyInfoBar">
             <table>
                 <tr>
-                    <th>Departure Time : {{bus.timeOfDeparture}}</th>
-                    <th>Arrivale Time : {{bus.timeOfArrival}}</th>
-                    <th>Total Fare : Rs {{ticket.totalAmount}}</th>
+                    <th>Departure Time : {{bus?.timeOfDeparture}}</th>
+                    <th>Arrivale Time : {{bus?.timeOfArrival}}</th>
+                    <th>Total Fare : Rs {{ticket?.totalAmount}}</th>
                 </tr>
             </table>
         </div>
