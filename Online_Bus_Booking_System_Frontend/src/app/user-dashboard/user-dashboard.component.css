@@ -108,7 +108,7 @@ button {
     padding: 20px;
     margin-top: 20px;
     overflow: hidden;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
@@ -141,7 +141,7 @@ table {
 th {
     text-align: center;
     padding: 16px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: larger;
 }
 
@@ -208,7 +208,7 @@ td {
 }
 
 label {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: larger;
 }
 

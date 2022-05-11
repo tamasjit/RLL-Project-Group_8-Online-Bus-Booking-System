@@ -21,7 +21,7 @@ button {
   width: 32%;
   opacity: 0.9;
   float: left;
-  font-family: 'Pacifico', cursive;;
+  font-family: 'Roboto Condensed', sans-serif;;
   font-size: 18px;
 }
 .cancelbtn {
@@ -49,6 +49,6 @@ button {
     padding-top: 16px;
   }
   label{
-    font-family: 'Pacifico', cursive;;
+    font-family: 'Roboto Condensed', sans-serif;;
     font-size: 18px;
   }

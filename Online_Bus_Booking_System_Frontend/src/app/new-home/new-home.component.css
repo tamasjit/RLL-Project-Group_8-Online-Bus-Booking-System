@@ -50,7 +50,7 @@ input[type=text], input[type=password],input[type=date]{
   padding-top:20px;
   padding-bottom: 21px;
   margin: 5px 0 20px 0;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
   display: inline-block;
   border: none;
   font-weight: bold;
@@ -71,7 +71,7 @@ label{
   width: 5%;
   margin-bottom: 16px;
   margin-left: 95px;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 p{
@@ -278,10 +278,10 @@ img {vertical-align: middle;
   font-weight: bold;
 }
 .features-heading{
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 p{
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .columns {

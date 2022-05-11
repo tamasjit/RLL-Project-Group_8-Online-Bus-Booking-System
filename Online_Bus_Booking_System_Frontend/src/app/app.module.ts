@@ -24,6 +24,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { AngularEmojisModule } from 'angular-emojis';
 //import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -72,6 +73,7 @@ import { RescheduleSeatBookingComponent } from './reschedule-seat-booking/resche
      MatNativeDateModule,
      MatFormFieldModule,
      MatInputModule,
+     AngularEmojisModule
 
 
 // =======

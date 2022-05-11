@@ -8,7 +8,7 @@ th {
     padding: 10px;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
-    font-family: 'Pacifico', cursive;;
+    font-family: 'Roboto Condensed', sans-serif;;
     font-size: 18px;
 }
 
@@ -57,14 +57,14 @@ body {
     padding: 10px;
     background: #f1f1f1;
     background-repeat: no-repeat;
-    background-image: url("/src/assets/buswater.jpeg");
+    background-image: url("/src/assets/busmunshaf2.png");
     background-size: 100% auto;
     height: 100%;
     font-family: "Lato", sans-serif;
 }
 
 button {
-    font-family: 'Pacifico', cursive;;
+    font-family: 'Roboto Condensed', sans-serif;;
     border-radius: 10px;
 }
 

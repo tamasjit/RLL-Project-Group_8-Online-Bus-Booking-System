@@ -21,7 +21,7 @@
 
     <div class="card">
 
-        <h1 style="text-align: center; font-family:'Pacifico', cursive, 'serif' ; color:black;">Add Bus</h1>
+        <h1 style="text-align: center; font-family:'Roboto Condensed', cursive, 'serif' ; color:black;">Add Bus</h1>
         <form #addBusForm="ngForm" (ngSubmit)="checkBus(addBusForm)">
 
             <label for="name">Bus Name</label><br>
@@ -95,7 +95,7 @@
 <div id="Booking" class="tabcontent">
 
     <div class="card">
-        <h1 style="text-align: center; font-family:'Pacifico', cursive, 'serif' ; color:black;">Booking</h1>
+        <h1 style="text-align: center; font-family:'Roboto Condensed', cursive, 'serif' ; color:black;">Booking</h1>
         <form #bookBusForm="ngForm" (ngSubmit)="bookingBus(bookBusForm)">
             <label for="busNo2">Bus No.</label><br>
             <input type="text" id="busNo2" name="busNo2" #bn2="ngModel" placeholder="Enter Bus Id"
@@ -137,7 +137,7 @@
 
 <div id="View" class="tabcontent">
     <div class="card">
-        <h1 style="text-align: center; font-family:'Pacifico', cursive, 'serif' ; color:black;">View Buses</h1>
+        <h1 style="text-align: center; font-family:'Roboto Condensed', cursive, 'serif' ; color:black;">View Buses</h1>
         <table id="viewbuses">
             <tr>
                 <th>BusId</th>
@@ -168,7 +168,7 @@
 <div id="Route" class="tabcontent">
 
     <div class="card">
-        <h1 style="text-align: center; font-family:'Pacifico', cursive, 'serif' ; color:black;">Update Route</h1>
+        <h1 style="text-align: center; font-family:'Roboto Condensed', cursive, 'serif' ; color:black;">Update Route</h1>
         <form #updateBusForm="ngForm" (ngSubmit)="changeBus(updateBusForm)">
             <label for="busNo1">Bus No.</label><br>
             <input type="text" id="busNo1" name="busNo1" #bn1="ngModel" placeholder="Enter Bus Id"
@@ -241,7 +241,7 @@
 <div id="Frequency" class="tabcontent">
 
     <div class="card">
-        <h1 style="text-align: center; font-family:'Pacifico', cursive, 'serif' ; color:black;">Preferred Bus</h1>
+        <h1 style="text-align: center; font-family:'Roboto Condensed', cursive, 'serif' ; color:black;">Preferred Bus</h1>
         <table id="preferrredbus">
             <tr>
                 <th>BusId</th>
@@ -272,7 +272,7 @@
 <div id="Customer" class="tabcontent">
 
     <div class="card">
-        <h1 style="text-align: center; font-family:'Pacifico', cursive, 'serif' ; color:black;">Customer Registration
+        <h1 style="text-align: center; font-family:'Roboto Condensed', cursive, 'serif' ; color:black;">Customer Registration
         </h1>
         <button type="submit" (click)="regCustomer()" style="width: 40%;  margin: 8px;">Registered Customer</button>
         <button type="submit" (click)="noBooking()" style="width: 50%;  margin: 8px;">Registered Customer without any
@@ -327,4 +327,37 @@
                 </tr>
             </table>
         </div>
+    </div>
+
+    <div class="mat-typography">
+        <footer style="text-align: center;">
+            <br><br>
+            <b>SOCIAL MEDIA CHANNELS </b><br><br>
+            <div class="features-div">
+                <h2 class="features-heading" style="font-size: 25px;"></h2>
+                <i style="font-size:1.5em;" class="fa fa-linkedin"></i>&nbsp;&nbsp;
+                <i style="font-size:1.5em;" class="fa fa-facebook"></i>&nbsp;&nbsp;
+                <i style="font-size:1.5em;" class="fa fa-twitter"></i>
+                </div>
+            <div class="team-1">
+            </div><br>
+            <b>CONTACT DETAILS</b><br> <br>
+            <b>PHONE SUPPORT</b> | +919876543210 | <b>EMAIL SUPPORT</b> | OBC@gmail.com<br> 
+            <div class="features-div">
+                <br>
+                <h2 class="features-heading" style="font-size: 25px;">Available in</h2>
+                <i style="font-size:1.5em;" class="fa fa-apple"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i style="font-size:1.5em;" class="fa fa-android"></i>
+                <br>
+                <br>
+                © 2022 OBS All rights reserved .  Privacy Policy | Terms of Use| Sales Policy | Legal Site Map
+                <br>
+                <br>
+              </div>
+            <div class="container-fluid" style="background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);">
+               <h1 style="color: #434343">Made with ❤️ in India<angular-emojis [name]="'India'" size="50"> </angular-emojis></h1> 
+               <angular-emojis [name]="'black_heart'" size="50"> </angular-emojis>
+            </div>
+            
+        </footer>
     </div>
