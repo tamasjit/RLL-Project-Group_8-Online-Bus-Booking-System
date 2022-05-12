@@ -12,7 +12,7 @@ public class EmailService {
 	
 	public void sendEmailForNewRegistration(String email,String text,String subject) {
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("sightcitytravelspvt@gmail.com");
+		message.setFrom("onlinebustravels@gmail.com");
 		message.setTo(email);
 		message.setSubject(subject);
 		message.setText(text);
@@ -21,7 +21,7 @@ public class EmailService {
 	
 	public void sendEmailForBooking(String email,StringBuffer text,String subject) {
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("sightcitytravelspvt@gmail.com");
+		message.setFrom("onlinebustravels@gmail.com");
 		message.setTo(email);
 		message.setSubject(subject);
 		message.setText(text.toString());
@@ -31,7 +31,7 @@ public class EmailService {
 	
 	public void sendEmailForForgetPassword(String email,String subject,String text) {
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("sightcitytravelspvt@gmail.com");
+		message.setFrom("onlinebustravels@gmail.com");
 		message.setTo(email);
 		message.setSubject(subject);
 		message.setText(text);

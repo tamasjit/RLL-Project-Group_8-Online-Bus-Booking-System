@@ -8,10 +8,10 @@
 		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.lti</groupId>
-	<artifactId>SightCity-Travels</artifactId>
+	<groupId>com.obs</groupId>
+	<artifactId>Obs-Travels</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SightCity-Travels</name>
+	<name>Obs-Travels</name>
 	<description>Bus Reservation</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -41,6 +41,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>capital.scalable</groupId>
+			<artifactId>spring-auto-restdocs-core</artifactId>
+			<version>2.0.11</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -49,6 +60,47 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+             <configuration>
+                <includes>
+                    <include>**/*Test.java</include>
+                </includes>
+                <systemPropertyVariables>
+                    <org.springframework.restdocs.outputDir>
+                        ${project.build.directory}/generated-snippets 
+                    </org.springframework.restdocs.outputDir>
+                    <org.springframework.restdocs.javadocJsonDir>
+                        ${project.build.directory}/generated-javadoc-json 
+                    </org.springframework.restdocs.javadocJsonDir>
+                </systemPropertyVariables>
+             </configuration>
+        </plugin>
+        <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <extensions>true</extensions>
+            <executions>
+                <execution>
+                    <id>generate-javadoc-json</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>javadoc-no-fork</goal>
+                    </goals>
+                    <configuration>
+                        <doclet>capital.scalable.restdocs.jsondoclet.ExtractDocumentationAsJsonDoclet</doclet>
+                        <docletArtifact>
+                            <groupId>capital.scalable</groupId>
+                            <artifactId>spring-auto-restdocs-json-doclet</artifactId> 
+                            <version>2.0.11</version>
+                        </docletArtifact>
+                        <destDir>generated-javadoc-json</destDir> 
+                        <reportOutputDirectory>${project.build.directory}</reportOutputDirectory> 
+                        <useStandardDocletOptions>false</useStandardDocletOptions>
+                        <show>package</show>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
 		</plugins>
 	</build>
 
