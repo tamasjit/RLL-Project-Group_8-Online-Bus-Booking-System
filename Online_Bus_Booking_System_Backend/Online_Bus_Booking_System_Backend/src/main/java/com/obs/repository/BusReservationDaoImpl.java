@@ -238,7 +238,7 @@ public class BusReservationDaoImpl implements BusReservationDao {
 	}
 
 	public List<User> viewCustomerWhoRegisteredButwithNoBooking() {
-		String jpql = "select u from User u where u.userId not in (select nvl2(t.user.userId,t.user.userId,0) from Ticket t)";
+		String jpql = "select u from User u where u.userId not in (select COALESCE(t.user.userId,t.user.userId,0) from Ticket t)";
 		TypedQuery<User> query = em.createQuery(jpql, User.class);
 		List<User> user = query.getResultList();
 		return user;

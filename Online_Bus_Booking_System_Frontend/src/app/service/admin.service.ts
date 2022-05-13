@@ -11,8 +11,8 @@ import { Ticket } from '../model/Ticket';
   providedIn: 'root'
 })
 export class AdminService {
-  ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
-  //ROOT_URL:String="http://localhost:5000";
+  //ROOT_URL:String="http://obsbus-env.eba-39b63ghj.us-east-1.elasticbeanstalk.com";
+  ROOT_URL:String="http://localhost:5000";
 
   constructor(private httpClient: HttpClient) { }
 

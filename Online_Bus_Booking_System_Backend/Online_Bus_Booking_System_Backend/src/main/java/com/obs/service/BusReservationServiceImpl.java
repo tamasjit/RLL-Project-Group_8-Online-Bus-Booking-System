@@ -168,8 +168,8 @@ public class BusReservationServiceImpl implements BusReservationService {
 	public void sendEmailOnRegistration(User user) {
 		String subject = "Registration confirmation";
 
-		String text = "Hi " + user.getFirstName() + "\n " + " You have been Successfully registered. \n"
-				+ "Your userId is " + user.getUserId() + ".\n " + "Please use this to login";
+		String text = "Hi " + user.getFirstName() + ",\n " + "You have been Successfully registered. \n"
+				+ "Your userId is " + user.getUserId() + ".\n" + "Please use this to login"+"\n\n"+"Thank You,"+"\n"+"Regards,"+"\n"+"OBS Travels Team";
 
 		emailservice.sendEmailForNewRegistration(user.getEmail(), text, subject);
 		System.out.println("Mail sent");
@@ -182,18 +182,21 @@ public class BusReservationServiceImpl implements BusReservationService {
 		String subject = "Ticket confirmation";
 
 		StringBuffer text = new StringBuffer();
-		text.append("Hi " + ticket.getUser().getFirstName() + ".\n " + "Your ticket has been successfully booked.\n"
-				+ "Your Ticket Id is " + ticket.getTicketId() + ".\n " + "Source : " + ticket.getBus().getSource()
-				+ " Destination : " + ticket.getBus().getDestination() + "\n" + "Departure Time : "
-				+ ticket.getBus().getTimeOfDeparture() + " Arrival Time : " + ticket.getBus().getTimeOfArrival()
+		text.append("Hi " + ticket.getUser().getFirstName() + ".\n\n" + "Your ticket has been successfully booked.\n"
+				+ "Your Ticket Id is " + ticket.getTicketId() + ".\n" + "Source : " + ticket.getBus().getSource()
+				+"\n"+ "Destination : " + ticket.getBus().getDestination() + "\n" + "Departure Time : "
+				+ ticket.getBus().getTimeOfDeparture() +"\n"+ "Arrival Time : " + ticket.getBus().getTimeOfArrival()
 				+ "\n");
 
 		for (int i = 0; i < ticket.getNoOfPassengers(); i++) {
-			text.append("Passenger Name : " + ticket.getPassengers().get(i).getPassengerName() + " Passenger SeatNo : "
+			text.append("Passenger Name : " + ticket.getPassengers().get(i).getPassengerName() +"\n"+ "Passenger SeatNo : "
 					+ ticket.getPassengers().get(i).getSeatNo() + "\n");
 		}
 
 		text.append("Total Amount : " + ticket.getTotalAmount());
+		text.append("\n\n"+"Thank You for booking with us!");
+		text.append("\n"+"Regards,"+"\n"+"OBS Travels Team");
+	
 
 		emailservice.sendEmailForBooking(ticket.getEmail(), text, subject);
 
@@ -212,7 +215,7 @@ public class BusReservationServiceImpl implements BusReservationService {
 
 		String subject = "Please click on the link given below to reset the password.";
 
-		String text = "Your reset password link : " + "http://localhost:4200/forgotLink";
+		String text = "Your reset password link : " + "http://obsbustrav.s3-website-us-east-1.amazonaws.com/forgotLink"+" "+"\nThank You,"+"\n"+"Regards,"+"\n"+"OBS Travels Team";
 		emailservice.sendEmailForForgetPassword(user.getEmail(), subject, text);
 		System.out.println("Mail sent");
 
