@@ -38,6 +38,10 @@ public interface BusReservationDao {
 	
 	public List<Bus> viewAllBuses(); //10
 	
+	public List<String> viewAllBusSource(); //19tg
+	
+	public List<String> viewAllDestination();//20tg
+	
 	public List<User> viewAllRegsiteredCustomers(); //11
 	
 	public List<User> viewCustomerWhoRegisteredButwithNoBooking(); //12

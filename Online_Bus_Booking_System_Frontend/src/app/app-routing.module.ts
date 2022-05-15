@@ -18,6 +18,7 @@ import { SeatBookingComponent } from './seat-booking/seat-booking.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { TrackTicketComponent } from './track-ticket/track-ticket.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { SourceDesComponent } from './source-des/source-des.component';
 
 
 
@@ -84,6 +85,9 @@ const routes: Routes = [
 },
 {
   path:'rescheduleSeat', component:RescheduleSeatBookingComponent
+},
+{
+  path:'SourceDes', component:SourceDesComponent
 }
 
 ];

@@ -71,6 +71,14 @@ public class BusReservationServiceImpl implements BusReservationService {
 		// TODO Auto-generated method stub
 		return busDao.viewAllBuses();
 	}
+	public List<String> viewAllBusSource() {
+		// TODO Auto-generated method stub
+		return busDao.viewAllBusSource();
+	}
+	public List<String> viewAllDestination() {
+		// TODO Auto-generated method stub
+		return busDao.viewAllDestination();
+	}
 
 	public List<User> viewAllRegsiteredCustomers() {
 		// TODO Auto-generated method stub

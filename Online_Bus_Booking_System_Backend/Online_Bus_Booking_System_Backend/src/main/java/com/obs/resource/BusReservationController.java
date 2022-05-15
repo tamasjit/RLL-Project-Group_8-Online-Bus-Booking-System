@@ -184,6 +184,16 @@ public class BusReservationController {
 		// TODO Auto-generated method stub
 		return busService.viewAllBuses();
 	}
+	@GetMapping(value="/viewallbussource")
+	public List<String> viewAllBusSource() {
+		// TODO Auto-generated method stub
+		return busService.viewAllBusSource();
+	}
+	@GetMapping(value="/viewallbusdestination")
+	public List<String> viewAllDestination() {
+		// TODO Auto-generated method stub
+		return busService.viewAllDestination();
+	}
 
 	//http://localhost:9090/viewallregsiteredcustomers
 	@GetMapping(value="/viewallregsiteredcustomers")

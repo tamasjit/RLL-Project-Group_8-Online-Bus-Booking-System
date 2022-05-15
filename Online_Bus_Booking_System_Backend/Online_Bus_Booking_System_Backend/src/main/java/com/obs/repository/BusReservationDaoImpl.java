@@ -219,6 +219,23 @@ public class BusReservationDaoImpl implements BusReservationDao {
 
 		return buses;
 	}
+	public List<String> viewAllBusSource() {
+		String jpql = "select DISTINCT b.source from Bus b";
+
+		TypedQuery<String> query = em.createQuery(jpql, String.class);
+		List<String> source = query.getResultList();
+
+		return source;
+	}
+	public List<String> viewAllDestination() {
+		String jpql = "select DISTINCT b.destination from Bus b";
+
+		TypedQuery<String> query = em.createQuery(jpql, String.class);
+		List<String> destination = query.getResultList();
+
+		return destination;
+	}
+	
 
 	public List<User> viewAllRegsiteredCustomers() {
 		String jpql = "select u from User u";

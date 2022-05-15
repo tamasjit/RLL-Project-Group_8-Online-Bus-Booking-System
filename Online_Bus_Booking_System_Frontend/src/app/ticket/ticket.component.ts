@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import jspdf from 'jspdf';
+import jspdf, { jsPDF } from 'jspdf';
 
 import html2canvas from 'html2canvas';
 import { UserService } from '../service/user.service';
@@ -69,19 +69,65 @@ export class TicketComponent implements OnInit {
 
   public captureScreen() {
     var data = document.getElementById('printThisTicket');
-    html2canvas(data, { scrollY: -window.scrollY, scale: 1 }).then(canvas => {
+    html2canvas(data).then(canvas => {  
       // Few necessary setting options  
-      var imgWidth = 208;
-      var pageHeight = 295;
+    
+      const contentDataURL = canvas.toDataURL('image/png')  
+      var margin = 20;
+      var imgWidth = 210 - 2*margin; 
+      var pageHeight = 295;  
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
-
-      const contentDataURL = canvas.toDataURL('image/png')
-      let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
+    
+      var doc = new jsPDF('p', 'mm');
       var position = 0;
-      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-      pdf.save('Ticket.pdf'); // Generated PDF   
+    
+      doc.addImage(contentDataURL, 'PNG', margin, position, imgWidth, imgHeight);
+    
+      heightLeft -= pageHeight;
+    
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        doc.addPage();
+        doc.addImage(contentDataURL, 'PNG', margin, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      doc.save( 'OBSticket.pdf');
+    
     });
+    // html2canvas(data, { scrollY: -window.scrollY, scale: 1 }).then(canvas => {
+    //   // // Few necessary setting options  
+    //   // var imgWidth = 210;
+    //   // var pageHeight = 295;
+
+
+    //   // var imgHeight = canvas.height * imgWidth / canvas.width;
+
+    //   // const contentDataURL = canvas.toDataURL('image/png')
+    //   // let pdf = new jspdf('p', 'mm', [297, 210]); // A4 size page of PDF  
+    //   // var position = 0;
+    //   // pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+    //   // pdf.save('Ticket.pdf'); // Generated PDF   
+    //   var imgData = canvas.toDataURL('image/png');
+    //   var imgWidth = 210; 
+    //   var pageHeight = 295;  
+    //   var imgHeight = canvas.height * imgWidth / canvas.width;
+    //   var heightLeft = imgHeight;
+    //   var doc = new jsPDF('p', 'mm');
+    //   var position = 0;
+      
+
+    //   doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    //   heightLeft -= pageHeight;
+
+    //   while (heightLeft >= 0) {
+    //     position = heightLeft - imgHeight;
+    //     doc.addPage();
+    //     doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    //     heightLeft -= pageHeight;
+    //   }
+    //   doc.save( 'file.pdf');
+    // });
   }
 
   cancelTicketId(ticketId) {
@@ -94,7 +140,6 @@ export class TicketComponent implements OnInit {
   cancelfn() {
 
     var modal = document.getElementById("myModal");
-    var btn3 = document.getElementById("myBtn");
 
 
     modal.style.display = "block";

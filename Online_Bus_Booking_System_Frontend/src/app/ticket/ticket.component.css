@@ -10,62 +10,70 @@ th {
     padding: 40px;
 }
 
-.ticketContainer p {
+/* .ticketContainer p {
     float: right;
-}
+} */
 
 .ticketContainer hr {
     border: 2px solid rgb(134, 35, 5);
 }
 
-.topBar {
-    background-color: rgb(139, 218, 207);
+
+.topBar1{
+    background-color: rgb(105, 184, 180);
+    padding: 30px;
+    width:auto;
+    margin:auto;
+    margin-top: 10px;
+    max-width:max-content;
     border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 15px;
-    padding-right: 20px;
-    width: 100%;
+}
+.topBar1 .sourceDest{
+    background-color: rgb(232, 241, 241);
+    border-radius: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: medium;
+    width: auto;
+    margin: auto;    
+}
+.topBar1 .sourceDestData{
+    background-color: rgb(208, 235, 229);
+    border-radius: 10px;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: medium;
+    width: auto;
     margin: auto;
-    font-size: 1.3em;
+    margin-top: 10px;
+
 }
 
-.topBar th {
-    width: 100%;
-    padding-left: 80px;
-    padding-right: 80px;
-    overflow: hidden;
+.topBar1 th, td {
+    width: 350px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow:visible;
     /* border: 1px solid black; */
 }
+
+
 
 .ticketContainer .logo {
     float: left;
 }
 
-.passengerDiv {
+/* .passengerDiv {
     background-color: rgb(105, 184, 180);
     padding: 30px;
-    width: 95%;
+    width: auto;
     margin: auto;
+    
     margin-top: 10px;
     border-radius: 10px;
+    
 }
-
-table {
-    /* border: 1px solid black; */
-    table-layout: fixed;
-    width: 100%;
-    text-align: center;
-}
-
-.titlePassenger th,
-td {
-    width: 350px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    overflow: hidden;
-}
-
 .passengerDiv .titlePassenger {
     background-color: rgb(232, 241, 241);
     border-radius: 10px;
@@ -87,8 +95,25 @@ td {
     margin: auto;
     margin-top: 10px;
 }
+.passengerDiv th, td {
+    width: 350px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+} */
 
-.busInfoBar {
+table {
+    /* border: 1px solid black; */
+    table-layout:fixed;
+    width: auto;
+    text-align: center;
+}
+
+
+
+
+
+/* .busInfoBar {
     background-color: rgb(139, 218, 207);
     border-radius: 10px;
     padding-top: 15px;
@@ -104,7 +129,7 @@ td {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: medium;
-}
+} */
 
 #downloadPdf {
     text-align: right;

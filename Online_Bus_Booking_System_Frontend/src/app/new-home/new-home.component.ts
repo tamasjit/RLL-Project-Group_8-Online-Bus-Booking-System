@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SharedService } from '../service/shared.service';
 
 
 @Component({
@@ -18,8 +19,12 @@ export class NewHomeComponent implements OnInit {
   source: String;
   destination: String;
   dateOfJourney: Date;
+  
+  SourceList: any;
+  DestinationList: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private service: SharedService) { }
 
   ngOnInit() {
     console.log(sessionStorage.getItem("userId"));
@@ -44,6 +49,12 @@ export class NewHomeComponent implements OnInit {
         setTimeout(carousel, 2000); // Change image every 2 seconds
       }
     }
+    this.service.viewAllBusSource().subscribe((data1:any)=>{
+      this.SourceList=data1;
+    })
+    this.service.viewAllBusDestination().subscribe((data2:any)=>{
+      this.DestinationList=data2;
+    })
 
 
   }
@@ -66,6 +77,7 @@ export class NewHomeComponent implements OnInit {
     }
 
   }
+  
 
 
 }

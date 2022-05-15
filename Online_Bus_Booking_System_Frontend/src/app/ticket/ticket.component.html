@@ -4,23 +4,49 @@
     </div>
 
     <div class="ticketContainer" id="printThisTicket">
-        <img class="logo" src="../assets/logo for ticket.png" width="100px" height="80px">
-        <p>Contact Us. +91 9876 543 210</p>
+        <img class="logo" src="../assets/logo for ticket.png" width="200px" height="200px">
+        <!-- <p>Contact Us. +91 9876 543 210</p>
+        <p>Email: onlinebustravels@gmail.com</p>
+        <p>Registered Corporate Office:PNR House -->
 
-        <br><br><br><br>
-        <hr>
+            <!-- R 5 Green Park Market Pune.</p> -->
+            <address style="text-align:right; font-size:large;">
+            Obs Travels Private Limited,<br>
+            Contact No: +91 9876 543 210<br>
+            Email: onlinebustravels@gmail.com<br>
+            Registered Corporate Office: <br>
+            PNR House,<br>
+            R-5 Green Park Market,<br>
+            Pune 411007,<br>
+            Maharastra,<br>
+            India<br>
+            </address>
         <br>
-        <table class="topBar">
-            <tr>
-                <th>{{bus?.source}} - {{bus?.destination}}</th>
-                <th>Date Of Journey : {{ticket?.travelDate}}</th>
-                <th>Ticket Id : {{ticket?.ticketId}}</th>
-            </tr>
+        <hr>
+        
+
+        <table class="topBar1">
+            <div class="sourceDest">
+                <tr>
+                    <th>Source City</th>
+                    <th>Destination City</th>
+                    <th>Date Of Journey</th>
+                    <th>Ticket Id</th>
+                </tr>
+            </div>
+            <div class="sourceDestData">
+                <tr>
+                    <td>{{bus?.source}}</td>
+                    <td>{{bus?.destination}}</td>
+                    <td>{{ticket?.travelDate}}</td>
+                    <td>{{ticket?.ticketId}}</td>
+                </tr>
+            </div> 
         </table>
 
-        <div class="passengerDiv">
+        <div class="topBar1">
             <table>
-                <div class="titlePassenger">
+                <div class="sourceDest">
                     <tr>
                         <th>Passenger Name</th>
                         <th>Seat Number</th>
@@ -28,38 +54,93 @@
                         <th>Passenger Id</th>
                     </tr>
                 </div>
-
-                <div class="listPassenger">
+                <div class="sourceDestData">
                     <tr *ngFor="let p of passengerList">
                         <td>{{p?.passengerName}}</td>
-                        <td> {{p?.seatNo}} </td>
-                        <td> {{p?.passengerAge}} </td>
+                        <td>{{p?.seatNo}}</td>
+                        <td>{{p?.passengerAge}}</td>
                         <td>{{p?.passengerId}}</td>
                     </tr>
                 </div>
             </table>
         </div>
-        <div class="busInfoBar">
+        <div class="topBar1">
             <table>
-                <tr>
-                    <th>Bus Id : {{bus?.busId}}</th>
-                    <th>Bus Type : {{bus?.typeOfBus}}</th>
-                    <th>Bus Name : {{bus?.busName}}</th>
-                </tr>
+                <div class="sourceDest">
+                    <tr>
+                        <th>Bus Id</th>
+                        <th>Bus Type</th>
+                        <th>Bus Name</th>
+                        <!-- <th></th> -->
+                    </tr>
+                </div>
+                <div class="sourceDestData">
+                    <tr>
+                        <td>{{bus?.busId}}</td>
+                        <td>{{bus?.typeOfBus}}</td>
+                        <td>{{bus?.busName}}</td>
+                        <!-- <td></td> -->
+                    </tr>
+                </div>
+                
             </table>
         </div>
 
-        <div class="jouneyInfoBar">
+        <div class="topBar1">
             <table>
-                <tr>
-                    <th>Departure Time : {{bus?.timeOfDeparture}}</th>
-                    <th>Arrivale Time : {{bus?.timeOfArrival}}</th>
-                    <th>Total Fare : Rs {{ticket?.totalAmount}}</th>
-                </tr>
+                <div class="sourceDest">
+                    <tr>
+                        <th>Departure Time</th>
+                        <th>Arrivale Time</th>
+                        <th>Total Fare (₹)</th>
+                        <!-- <th></th> -->
+                    </tr>
+                </div>
+                <div class="sourceDestData">
+                    <tr>
+                        <td>{{bus?.timeOfDeparture}}</td>
+                        <td>{{bus?.timeOfArrival}}</td>
+                        <td>{{ticket?.totalAmount}}</td>
+                        <!-- <td></td> -->
+
+                    </tr>
+
+                </div>
+                
             </table>
         </div>
-
+        <div class="topBar1">
+            <article style="text-align:center; font-size:xx-large; padding-bottom: 30px;">Important Guidlines</article>
+        <table>
+            <div class="sourceDest">
+                <tr>
+                    <th>1. Please download and activate the Aarogya Setu app on your phone.</th>
+                    <th>2. Certify your health status through the Aarogya Setu app or the self-declaration form.</th>
+                    <th>3. Please reach at least half hour prior to bus departure.</th>
+                    <th>4. Face masks are compulsory. We urge you to carry your own.</th>
+                </tr>
+            </div>
+            <div class="sourceDestData">
+                <tr>
+                    <td><img src="../assets/Aarogya_Setu_App_Logo.png" style="width: 128px; height: 128px;"></td>
+                    <td><img src="../assets/declaration.png" alt=""></td>
+                    <td><img src="../assets/5257405.png" alt=""></td>
+                    <td><img src="../assets/mask_ticket.png" alt=""></td>
+                </tr>
+            </div>
+        </table> 
     </div>
+    <div class="Thankyou" style="text-align:center; font-size: xx-large;">
+        <img src="../assets/thank-you.png">
+        <h1>Best wishes for a safe, happy and healthy journey.</h1>
+    </div>
+    <hr>
+    <div class="container-fluid" style="background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);">
+        <h1 style="color: #434343; size: 10px; text-align: center;margin-bottom: 0px" >Made with❤️in India</h1>   </div>
+     <hr>        
+    </div>
+    <br>
+    <br>
 
 
 

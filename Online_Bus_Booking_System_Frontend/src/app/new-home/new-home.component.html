@@ -9,19 +9,20 @@
         <div class="col_s">
           <span *ngIf="(src.dirty||src.touched)" style='color:darkred;'>
             <span style="margin-left: 10%;" *ngIf="src.errors?.required">Source is required</span></span><br>
-          <input list="list-buses" type="text" value="source" id="source" name="source" [(ngModel)]="source"
+          <input list="SourceList" type="text" value="source" id="source" name="source" [(ngModel)]="source"
             #src=ngModel placeholder="ENTER SOURCE CITY" required style="margin-left: 10%;">
 
 
-          <datalist id="list-buses">
-            <option value="Pune">
-            <option value="Mumbai">
-            <option value="Chennai">
-            <option value="Aurangabad">
-            <option value="Nashik">
-            <option value="Nagpur">
+          <datalist id="SourceList">
+            <option [value]="source" *ngFor="let source of SourceList">
+              {{source}}
+          </option>
 
           </datalist>
+          <!-- <datalist id="list-buses">
+            <option *ngFor="let s of SourceList" [value]="s.name">{{s.name}}</option>
+
+          </datalist> -->
         </div>
 
 
@@ -31,16 +32,14 @@
           <span *ngIf="(des.dirty||des.touched)" style='color:darkred;'>
             <span style="margin-left: 9%;" *ngIf="des.errors?.required">Destination is required</span></span><br>
 
-          <input list="list-buses" type="text" value="destination" id="destination" name="destination"
+          <input list="DestinationList" type="text" value="destination" id="destination" name="destination"
             [(ngModel)]="destination" #des=ngModel placeholder="ENTER DESTINATION CITY" required
             style="margin-left: 5%;">
 
-          <datalist id="list-buses">
-            <option value="Pune">
-            <option value="Mumbai">
-            <option value="Chennai">
-            <option value="Aurangabad">
-            <option value="Nagpur">
+          <datalist id="DestinationList">
+            <option [value]="destination" *ngFor="let destination of DestinationList">
+              {{destination}}
+          </option>
 
           </datalist>
         </div>

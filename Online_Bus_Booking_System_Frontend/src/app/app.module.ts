@@ -33,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RescheduleSeatBookingComponent } from './reschedule-seat-booking/reschedule-seat-booking.component';
+import { SourceDesComponent } from './source-des/source-des.component';
 
 
 
@@ -59,6 +60,7 @@ import { RescheduleSeatBookingComponent } from './reschedule-seat-booking/resche
     ContactUsComponent,
     ResetpasswordComponent,
     RescheduleSeatBookingComponent,
+    SourceDesComponent,
 
   ],
   imports: [
